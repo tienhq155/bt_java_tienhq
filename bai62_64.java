@@ -2,8 +2,11 @@ import java.util.Scanner;
 public class bai62_64 {
     public static void main(String[] args){
     Scanner scanner= new Scanner(System.in);
+    System.out.println("nhập A");
     double a = scanner.nextDouble();
+    System.out.println("nhập b");
     double b = scanner.nextDouble();
+    System.out.println("nhập c");
     double c = scanner.nextDouble();
     
     if( a == 0){
