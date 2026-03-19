@@ -75,6 +75,13 @@ public class bai1_19{
 
         //--------------------------------------------------
         //bài 8: tính S(n) = 1/2 + 3/4 + 5/6 + ... + (2n+1)/(2n+2) - Sai đề bài
+        //sửa đề tính S(n) = 1/2 + 3/4 + 5/6 + ... + (2n-1)/(2n) 
+        for (int i = 1; i < n; i++ ){
+            sum += (double) (2*i + 1)/ (2*i);
+        }
+        System.out.println("S(" + n + ") = " + sum);
+        scanner.close();
+
         //---------------------------------------------------
         //bài 9: tính S(n) =1 x 2 x 3 x 4 x ... x n
 
@@ -243,9 +250,37 @@ public class bai1_19{
         //-------------------------------------------------
         for(int k = 1; k <=x ; k++){
             gt *= k;
-            s = Math.pow(gt+s,1.0/(gt+1));
+            s = Math.pow(gt+s,1.0/(k+1));
         }
-        
+        //-------------------------------------------------
+        for(int k = 1; k<=x; k++){
+            gt*=x;
+            s= Math.sqrt(gt+s);
+        }
+        //-------------------------------------------------
+
         System.out.printf("Kết quả S(x,n) = %.5f%n", s);
     }
+    public static void new_2_main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập x: ");
+        double x = sc.nextDouble();
+        double s = 1 ;
+        for ( int k = 1; k <= x; k++){
+            s = 1.0 /(1 + s);
+        }
+    }
+    public static int new_3_main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập x: ");
+        double x = sc.nextDouble();
+        int k = 0;
+        int s = 0;
+        while (s+(k+1)<x) {
+            k++;
+            s += k;
+        }
+        return k;
+    }
+
 }
