@@ -201,7 +201,51 @@ public class bai1_19{
 
         // -------------------------------------------------
         //bài 70: Tính S(x,n) = 1 - 1/(1+2) + 1/(1+2+3) - ... + (-1)^n*1/(1+2+3+...+n)
-
+     
         
+        //bài 33
+    }
+    public static void new_1_main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập x: ");
+        double x = sc.nextDouble();
+        double s = 0;
+        double gt = 1;
+        for(int k = 1; k<= x; k++){
+            s = Math.sqrt(2 + s);
+        }
+        //-----------------------------------------------
+        for(int k = 1; k<= x; k++){
+            s = Math.sqrt(s - 1);
+            if (s == 0) {
+                break;
+            }
+        }
+        //------------------------------------------------
+        for(int k = 1; k<= x; k++){
+            s = Math.sqrt(s + 1);
+        }
+        //------------------------------------------------
+        for(int k = 1; k<= x; k++){
+            gt *= k;
+            s = Math.sqrt(gt + s);
+        }
+        //------------------------------------------------
+        s = Math.pow(2, 1.0/2);
+        for(int k = 3; k<= x; k++){
+            s = Math.pow(k + s, 1.0/k);
+        }
+        // ------------------------------------------------
+        for(int k = 1; k<=x; k++)
+            {
+                s = Math.pow(k + s, 1.0/(k+1));
+            }  
+        //-------------------------------------------------
+        for(int k = 1; k <=x ; k++){
+            gt *= k;
+            s = Math.pow(gt+s,1.0/(gt+1));
+        }
+        
+        System.out.printf("Kết quả S(x,n) = %.5f%n", s);
     }
 }
