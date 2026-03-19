@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class bai_80{
+public class bai70{
 //bài 70: Tính S(x,n) = 1 - 1/(1+2) + 1/(1+2+3) - ... + (-1)^n*1/(1+2+3+...+n)
 //nk = (2*(-1)^(k+1))/(k*(k+1))
     public static void main(String[] args) { 
